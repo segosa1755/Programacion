@@ -1,25 +1,53 @@
 import java.util.Scanner;
 
-public class MajorIMenor{
+public class MajorIMenor {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
+
         System.out.print("¿Cuántas filas tendrá la matriz? ");
         int files = s.nextInt();
+
         System.out.print("¿Cuántas columnas tendrá la matriz? ");
         int columnes = s.nextInt();
+
         int[][] matriu = new int[files][columnes];
+
+        // Introducir valores
+        System.out.println("Introduce los valores de la matriz:");
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
                 System.out.print("Valor en [" + i + "][" + j + "]: ");
                 matriu[i][j] = s.nextInt();
-         }
+            }
+        }
+
+        // Inicializar mayor y menor
+        int menor = matriu[0][0];
+        int mayor = matriu[0][0];
+
+        // Recorrer matriz para encontrar mayor y menor
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
-
-                if (matriu[i][j] < s) { 
-                    System.out.print("el numero mas petit es" + matriu[j])
-                } else if 
-                System.out.print(matriu[i][j] + " ");
+                if (matriu[i][j] < menor) {
+                    menor = matriu[i][j];
+                }
+                if (matriu[i][j] > mayor) {
+                    mayor = matriu[i][j];
+                }
+            }
         }
+
+        // Mostrar matriz
+        System.out.println("La matriz es:");
+        for (int i = 0; i < files; i++) {
+            for (int j = 0; j < columnes; j++) {
+                System.out.print(matriu[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // Resultados
+        System.out.println("El número más pequeño de la matriz es: " + menor);
+        System.out.println("El número más grande de la matriz es: " + mayor);
     }
 }
