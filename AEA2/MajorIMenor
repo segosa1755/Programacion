@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class MajorIMenor{
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("¿Cuántas filas tendrá la matriz? ");
+        int files = s.nextInt();
+        System.out.print("¿Cuántas columnas tendrá la matriz? ");
+        int columnes = s.nextInt();
+        int[][] matriu = new int[files][columnes];
+        for (int i = 0; i < files; i++) {
+            for (int j = 0; j < columnes; j++) {
+                System.out.print("Valor en [" + i + "][" + j + "]: ");
+                matriu[i][j] = s.nextInt();
+         }
+        for (int i = 0; i < files; i++) {
+            for (int j = 0; j < columnes; j++) {
+
+                if (matriu[i][j] < s) { 
+                    System.out.print("el numero mas petit es" + matriu[j])
+                } else if 
+                System.out.print(matriu[i][j] + " ");
+        }
+    }
+}
