@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Repaso1 {
     public static void main(String[] args) {
 
