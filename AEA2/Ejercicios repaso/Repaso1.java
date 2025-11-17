@@ -1,18 +1,17 @@
 import java.util.Scanner;
 public class Repaso1 {
     public static void main(String[] args) {
-
         Scanner s;
         s = new Scanner(System.in);
         double[] temp;
         temp = new double[7];
         double suma;
         suma = 0;
-        double max;
-        double min;
-        int diaMax;
-        int diaMin;
-        int i;
+        double max = 0;
+        double min = 0;
+        int diaMax = 0;
+        int diaMin = 0;
+        int i = 0;
         for (i = 0; i < 7; i++) {
             System.out.print("Introduce la temperatura del día " + (i + 1) + ": ");
             temp[i] = s.nextDouble();
