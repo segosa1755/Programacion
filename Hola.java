@@ -1,4 +1,4 @@
-public class Exemplesmatrius {
+public class Hola {
 	public static void main(String[] args){
 		int [] [] matriu ={
 			{1, 2, 3},
