@@ -4,7 +4,6 @@ public class EJ2 {
     EJ2 programa = new EJ2();
     programa.inici();
   }
-
   public void inici() {
     System.out.println("Llegiu un real pel teclat:");
     double a = llegirRealTeclat();
@@ -13,14 +12,10 @@ public class EJ2 {
     a = llegirRealTeclat();
     System.out.println("L’altre real ha estat " + a + ".");
   }
-
-  // Genera un valor de tipus double
   public double llegirRealTeclat() {
-
     Scanner lector = new Scanner(System.in);
     double realLlegit = 0.0;
     boolean llegit = false;
-
     while (!llegit) {
       llegit = lector.hasNextDouble();
       if (llegit) {
@@ -31,7 +26,6 @@ public class EJ2 {
         lector.next();
       }
     }
-
     lector.nextLine();
     return realLlegit;
   }
