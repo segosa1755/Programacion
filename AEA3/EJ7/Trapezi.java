@@ -1,5 +1,7 @@
 package AEA3.EJ7;
 
+import java.util.Scanner;
+
 public class Trapezi extends Figura {
 
     private double baseMayor;
@@ -19,5 +21,19 @@ public class Trapezi extends Figura {
     @Override
     public void calcularArea() {
         area = ((baseMayor + baseMenor) * altura) / 2;
+    }
+
+    @Override
+    public void llegirDades() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Base major: ");
+        baseMayor = sc.nextDouble();
+
+        System.out.print("Base menor: ");
+        baseMenor = sc.nextDouble();
+
+        System.out.print("Altura: ");
+        altura = sc.nextDouble();
     }
 }

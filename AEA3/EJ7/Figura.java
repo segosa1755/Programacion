@@ -16,4 +16,11 @@ public abstract class Figura {
     public void mostrarArea() {
         System.out.println("Area: " + area);
     }
+    
+    public void llegirDades() {
+    }
+
+    public void seguentFigura() {
+    System.out.println("Seguim amb la següent figura...");
+    }
 }

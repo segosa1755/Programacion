@@ -1,23 +1,62 @@
 package AEA3.EJ7;
 
+import java.util.Scanner;
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Triangle t = new Triangle(5, 4);
-        Quadrat q = new Quadrat(4);
-        Rectangle r = new Rectangle();
-        Trapezi tr = new Trapezi(6, 4, 3);
-        Rombe ro = new Rombe(5, 3);
-        Parallelogram p = new Parallelogram(5, 4);
-        Cercle c = new Cercle(3);
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
 
-        t.mostrarArea();
-        q.mostrarArea();
-        r.mostrarArea();
-        tr.mostrarArea();
-        ro.mostrarArea();
-        p.mostrarArea();
-        c.mostrarArea();
+        System.out.println("Escull figura: triangle, quadrat, rectangle, trapezi, rombre, parallelogram, cercle");
+        String opcio = sc.nextLine().toLowerCase();
+
+        Figura figura = null;
+
+        switch (opcio) {
+
+            case "triangle":
+                if (random.nextBoolean()) {
+                    figura = new Triangle();
+                } else {
+                    figura = new Triangle(1, 1);
+                }
+                break;
+
+            case "rectangle":
+                figura = new Rectangle();
+                break;
+
+            case "quadrat":
+                figura = new Quadrat();
+                break;
+
+            case "trapezi":
+                figura = new Trapezi();
+                break;
+
+            case "rombre":
+                figura = new Rombe();
+                break;
+
+            case "parallelogram":
+                figura = new Parallelogram();
+                break;
+
+            case "cercle":
+                figura = new Cercle();
+                break;
+
+            default:
+                System.out.println("Figura no valida");
+                return;
+        }
+
+        figura.llegirDades();
+        figura.calcularArea();
+        figura.mostrarArea();
+        figura.seguentFigura();
     }
 }

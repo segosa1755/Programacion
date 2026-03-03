@@ -1,5 +1,7 @@
 package AEA3.EJ7;
 
+import java.util.Scanner;
+
 public class Cercle extends Figura {
 
     private double radio;
@@ -15,5 +17,13 @@ public class Cercle extends Figura {
     @Override
     public void calcularArea() {
         area = Math.PI * radio * radio;
+    }
+
+    @Override
+    public void llegirDades() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Introdueix radi: ");
+        radio = sc.nextDouble();
     }
 }

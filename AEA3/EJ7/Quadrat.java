@@ -1,5 +1,7 @@
 package AEA3.EJ7;
 
+import java.util.Scanner;
+
 public class Quadrat extends Figura {
 
     private double lado;
@@ -15,5 +17,13 @@ public class Quadrat extends Figura {
     @Override
     public void calcularArea() {
         area = lado * lado;
+    }
+
+    @Override
+    public void llegirDades() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Introdueix costat: ");
+        lado = sc.nextDouble();
     }
 }
