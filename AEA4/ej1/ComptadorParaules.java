@@ -1,46 +1,43 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class ComptadorParaules {
     public static void main(String[] args) {
-        String fitxerEntrada = "entrada.txt";
-        String fitxerSortida = "sortida.txt";
+        File inputFile = new File("entrada.txt");
+        File outputFile = new File("sortida.txt");
 
-        BufferedReader br = null;
-        BufferedWriter bw = null;
+        Scanner lector = null;
+        PrintWriter escritor = null;
+
         int contador = 0;
-        try {
-            br = new BufferedReader(new FileReader(fitxerEntrada));
-            String linia;
 
-            while ((linia = br.readLine()) != null) {
-                if (!linia.trim().isEmpty()) {
-                    String[] paraules = linia.trim().split("\\s+");
-                    contador += paraules.length;
+        try {
+            lector = new Scanner(inputFile);
+
+            while (lector.hasNextLine()) {
+                String linea = lector.nextLine();
+                if (!linea.trim().isEmpty()) {
+                    String[] palabras = linea.trim().split("\\s+");
+                    contador += palabras.length;
                 }
             }
-            bw = new BufferedWriter(new FileWriter(fitxerSortida));
-            bw.write("El archivo tiene " + contador + " palabras.");
 
-            System.out.println("Procés completat correctament.");
+            escritor = new PrintWriter(outputFile);
+            escritor.println("Nombre total de paraules: " + contador);
 
-        } catch (FileNotFoundException e) {
-            System.out.println("Error: El fitxer '" + fitxerEntrada + "' no s'ha trobat.");
-        } catch (IOException e) {
-            System.out.println("S'ha produït un error de lectura/escriptura: " + e.getMessage());
+        } catch (java.io.FileNotFoundException e) {
+            System.out.println("Error: no s'ha trobat entrada.txt");
+        } catch (Exception e) {
+            System.out.println("Error inesperat: " + e.getMessage());
         } finally {
-            try {
-                if (br != null)
-                    br.close();
-                if (bw != null)
-                    bw.close();
-            } catch (IOException e) {
-                System.out.println("Error en tancar els fitxers.");
+            if (lector != null) {
+                lector.close();
             }
+            if (escritor != null) {
+                escritor.close();
+            }
+            System.out.println("Programa finalitzat");
         }
     }
 }
