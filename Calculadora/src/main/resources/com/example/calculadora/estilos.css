@@ -1,0 +1,226 @@
+/* =============================================
+   CALCULADORA CYBERPUNK - NEON THEME
+   ============================================= */
+
+.root {
+    -fx-background-color: #0a0a0f;
+    -fx-pref-height: Infinity;
+}
+
+/* DISPLAY */
+.display-container {
+    -fx-background-color: #0d0d1a;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-border-color: #00ffcc;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, #00ffcc, 15, 0.4, 0, 0);
+}
+
+.display-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 2.5em;
+    -fx-font-family: "Consolas";
+    -fx-max-width: Infinity;
+    -fx-effect: dropshadow(gaussian, #ffffff, 8, 0.4, 0, 0);
+}
+
+.history-label {
+    -fx-text-fill: #ff00ff;
+    -fx-font-size: 1em;
+    -fx-font-family: "Consolas";
+    -fx-effect: dropshadow(gaussian, #ff00ff, 6, 0.4, 0, 0);
+}
+
+/* BOTONES BASE */
+.button {
+    -fx-background-color: #12121f;
+    -fx-text-fill: #e0e0ff;
+    -fx-background-radius: 8;
+    -fx-font-size: 1.15em;
+    -fx-font-family: "Consolas";
+    -fx-min-width: 0;
+    -fx-padding: 5;
+    -fx-border-color: #2a2a4a;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, #0000ff, 6, 0.2, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #1a1a35;
+    -fx-border-color: #00ffcc;
+    -fx-text-fill: #00ffcc;
+    -fx-effect: dropshadow(gaussian, #00ffcc, 12, 0.5, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-scale-x: 0.93;
+    -fx-scale-y: 0.93;
+    -fx-effect: dropshadow(gaussian, #00ffcc, 20, 0.8, 0, 0);
+    -fx-background-color: #00ffcc22;
+}
+
+/* BORRAR TODO - Rojo neón */
+.btn-borrar-todo {
+    -fx-background-color: #1a0505;
+    -fx-text-fill: #ff3333;
+    -fx-border-color: #ff3333;
+    -fx-effect: dropshadow(gaussian, #ff3333, 10, 0.4, 0, 0);
+}
+.btn-borrar-todo:hover {
+    -fx-background-color: #ff333322;
+    -fx-text-fill: #ff6666;
+    -fx-effect: dropshadow(gaussian, #ff3333, 18, 0.7, 0, 0);
+}
+
+/* DEL - Naranja neón */
+.btn-del {
+    -fx-background-color: #1a0e00;
+    -fx-text-fill: #ff9900;
+    -fx-border-color: #ff9900;
+    -fx-effect: dropshadow(gaussian, #ff9900, 10, 0.4, 0, 0);
+}
+.btn-del:hover {
+    -fx-background-color: #ff990022;
+    -fx-text-fill: #ffbb44;
+    -fx-effect: dropshadow(gaussian, #ff9900, 18, 0.7, 0, 0);
+}
+
+/* HISTORIAL - Morado neón */
+.h-button {
+    -fx-background-color: #12001a;
+    -fx-text-fill: #cc00ff;
+    -fx-border-color: #cc00ff;
+    -fx-effect: dropshadow(gaussian, #cc00ff, 10, 0.4, 0, 0);
+}
+.h-button:hover {
+    -fx-background-color: #cc00ff22;
+    -fx-text-fill: #dd44ff;
+    -fx-effect: dropshadow(gaussian, #cc00ff, 18, 0.7, 0, 0);
+}
+
+/* SIGNO +/- - Gris azulado */
+.btn-signo {
+    -fx-background-color: #0a0a1a;
+    -fx-text-fill: #8888ff;
+    -fx-border-color: #4444aa;
+    -fx-effect: dropshadow(gaussian, #4444aa, 8, 0.3, 0, 0);
+}
+.btn-signo:hover {
+    -fx-background-color: #8888ff22;
+    -fx-text-fill: #aaaaff;
+    -fx-border-color: #8888ff;
+    -fx-effect: dropshadow(gaussian, #8888ff, 15, 0.6, 0, 0);
+}
+
+/* DIVISIÓN - Cian neón */
+.btn-divi {
+    -fx-background-color: #001a1a;
+    -fx-text-fill: #00eeff;
+    -fx-border-color: #00eeff;
+    -fx-effect: dropshadow(gaussian, #00eeff, 10, 0.4, 0, 0);
+}
+.btn-divi:hover {
+    -fx-background-color: #00eeff22;
+    -fx-text-fill: #44ffff;
+    -fx-effect: dropshadow(gaussian, #00eeff, 18, 0.7, 0, 0);
+}
+
+/* MULTIPLICACIÓN - Azul neón */
+.btn-multi {
+    -fx-background-color: #00001a;
+    -fx-text-fill: #0099ff;
+    -fx-border-color: #0099ff;
+    -fx-effect: dropshadow(gaussian, #0099ff, 10, 0.4, 0, 0);
+}
+.btn-multi:hover {
+    -fx-background-color: #0099ff22;
+    -fx-text-fill: #44bbff;
+    -fx-effect: dropshadow(gaussian, #0099ff, 18, 0.7, 0, 0);
+}
+
+/* RESTA - Amarillo neón */
+.btn-resta {
+    -fx-background-color: #1a1600;
+    -fx-text-fill: #ffee00;
+    -fx-border-color: #ffee00;
+    -fx-effect: dropshadow(gaussian, #ffee00, 10, 0.4, 0, 0);
+}
+.btn-resta:hover {
+    -fx-background-color: #ffee0022;
+    -fx-text-fill: #ffff44;
+    -fx-effect: dropshadow(gaussian, #ffee00, 18, 0.7, 0, 0);
+}
+
+/* SUMA - Verde neón */
+.btn-suma {
+    -fx-background-color: #001a00;
+    -fx-text-fill: #00ff66;
+    -fx-border-color: #00ff66;
+    -fx-effect: dropshadow(gaussian, #00ff66, 10, 0.4, 0, 0);
+}
+.btn-suma:hover {
+    -fx-background-color: #00ff6622;
+    -fx-text-fill: #44ff88;
+    -fx-effect: dropshadow(gaussian, #00ff66, 18, 0.7, 0, 0);
+}
+
+/* IGUAL - Rosa neón */
+.equal-button {
+    -fx-background-color: #1a0015;
+    -fx-text-fill: #ff00aa;
+    -fx-border-color: #ff00aa;
+    -fx-effect: dropshadow(gaussian, #ff00aa, 10, 0.4, 0, 0);
+}
+.equal-button:hover {
+    -fx-background-color: #ff00aa22;
+    -fx-text-fill: #ff44cc;
+    -fx-effect: dropshadow(gaussian, #ff00aa, 20, 0.8, 0, 0);
+}
+.equal-button:pressed {
+    -fx-scale-x: 0.93;
+    -fx-scale-y: 0.93;
+    -fx-effect: dropshadow(gaussian, #ff00aa, 30, 1.0, 0, 0);
+    -fx-background-color: #ff00aa33;
+}
+
+/* HISTORIAL OVERLAY */
+.history-overlay {
+    -fx-background-color: #0a0a0f;
+    -fx-padding: 20;
+    -fx-border-color: #ff00ff;
+    -fx-border-width: 1.5;
+}
+
+.history-title {
+    -fx-text-fill: #ff00ff;
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+    -fx-font-family: "Consolas";
+    -fx-effect: dropshadow(gaussian, #ff00ff, 12, 0.6, 0, 0);
+}
+
+.history-overlay .text-area {
+    -fx-control-inner-background: #0d0d1a;
+    -fx-text-fill: #00ffcc;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 12px;
+    -fx-border-color: #00ffcc;
+    -fx-border-width: 1;
+}
+
+.history-overlay .text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* SEPARADOR NEON */
+.neon-separator {
+    -fx-stroke: #00ffcc;
+    -fx-stroke-width: 1;
+    -fx-effect: dropshadow(gaussian, #00ffcc, 8, 0.6, 0, 0);
+    -fx-opacity: 0.6;
+}

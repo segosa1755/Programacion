@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.calculadora.CalculadoraController"
+           styleClass="root" stylesheets="@estilos.css">
+
+    <VBox spacing="10" fx:id="panelPrincipal" minWidth="0" fillWidth="true">
+        <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+        <!-- Display -->
+        <VBox spacing="5" styleClass="display-container" prefHeight="130" minHeight="130" maxHeight="130" alignment="BOTTOM_RIGHT" minWidth="0">
+            <Label fx:id="labelHistorial" text="" styleClass="history-label" maxWidth="Infinity" alignment="CENTER_RIGHT" />
+            <Label fx:id="display" text="0" styleClass="display-label" maxWidth="Infinity" alignment="CENTER_RIGHT" />
+        </VBox>
+
+        <!-- Separador neón -->
+        <Line startX="0" endX="500" styleClass="neon-separator" />
+
+        <!-- GridPane botones -->
+        <GridPane hgap="8" vgap="8" VBox.vgrow="ALWAYS" minWidth="0" maxWidth="Infinity" maxHeight="Infinity">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS" percentHeight="20" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="20" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="20" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="20" />
+                <RowConstraints vgrow="ALWAYS" percentHeight="20" />
+            </rowConstraints>
+
+            <!-- Fila 0 -->
+            <Button text="C"   onAction="#onBorrarTodoClick" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="button, btn-borrar-todo" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="DEL" onAction="#onBorrarCifraClick" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="button, btn-del"        maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="H"   onAction="#toggleHistorial"   GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="button, h-button"        maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="/"   onAction="#onOperadorClick"   GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="button, btn-divi"        maxWidth="Infinity" maxHeight="Infinity" />
+
+            <!-- Fila 1 -->
+            <Button text="7" onAction="#onNumeroClick"  GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="8" onAction="#onNumeroClick"  GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="9" onAction="#onNumeroClick"  GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="*" onAction="#onOperadorClick" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="button, btn-multi" maxWidth="Infinity" maxHeight="Infinity" />
+
+            <!-- Fila 2 -->
+            <Button text="4" onAction="#onNumeroClick"  GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="5" onAction="#onNumeroClick"  GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="6" onAction="#onNumeroClick"  GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="-" onAction="#onOperadorClick" GridPane.columnIndex="3" GridPane.rowIndex="2" styleClass="button, btn-resta" maxWidth="Infinity" maxHeight="Infinity" />
+
+            <!-- Fila 3 -->
+            <Button text="1" onAction="#onNumeroClick"  GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="2" onAction="#onNumeroClick"  GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="3" onAction="#onNumeroClick"  GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="button" maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="+" onAction="#onOperadorClick" GridPane.columnIndex="3" GridPane.rowIndex="3" styleClass="button, btn-suma" maxWidth="Infinity" maxHeight="Infinity" />
+
+            <!-- Fila 4 -->
+            <Button text="+/-" onAction="#onCambiarSignoClick" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="button, btn-signo"    maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="0"   onAction="#onNumeroClick"       GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="button"               maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="."   onAction="#onNumeroClick"       GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="button"               maxWidth="Infinity" maxHeight="Infinity" />
+            <Button text="="   onAction="#onIgualClick"        GridPane.columnIndex="3" GridPane.rowIndex="4" styleClass="button, equal-button" maxWidth="Infinity" maxHeight="Infinity" />
+        </GridPane>
+    </VBox>
+
+    <!-- Panel Historial -->
+    <VBox fx:id="panelHistorial" visible="false" managed="false" styleClass="history-overlay" spacing="10" alignment="CENTER">
+        <Label text="[ HISTORIAL ]" styleClass="history-title" />
+        <TextArea fx:id="areaHistorial" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="&lt; Tornar"  onAction="#toggleHistorial"      styleClass="button"               minWidth="100" />
+            <Button text="Esborrar"     onAction="#onBorrarHistorialClick" styleClass="button, btn-borrar-todo" minWidth="100" />
+        </HBox>
+    </VBox>
+
+</StackPane>
